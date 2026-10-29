@@ -1,0 +1,51 @@
+# =====================================================================
+# Secrets et donnees personnelles : ne jamais versionner
+# =====================================================================
+.env
+*.env
+!.env.example
+
+# Base de donnees : contient les comptes et les mots de passe
+# d'application chiffres des utilisateurs
+mailguard.db
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Anciennes persistances au format JSON
+comptes_utilisateurs.json
+historiques/
+historique_analyses.json
+
+# Mails de test reels (donnees privees)
+tests/eml/
+
+# =====================================================================
+# Modeles : trop volumineux pour GitHub (limite de 100 Mo par fichier)
+# =====================================================================
+# Les modeles ne vont JAMAIS sur GitHub (taille, et donnees privees de Nouvelair)
+modeles_mailguard/
+*.safetensors
+*.joblib
+*.onnx
+*.pkl
+
+# =====================================================================
+# Python
+# =====================================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# =====================================================================
+# Systeme et editeurs
+# =====================================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

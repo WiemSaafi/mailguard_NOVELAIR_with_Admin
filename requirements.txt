@@ -1,0 +1,30 @@
+# --- Cœur MailGuard (5 signaux + fusion) ---
+torch
+transformers>=5.0       # CANINE a été sauvegardé avec transformers 5.16.1
+sentencepiece           # tokenizer de multilingual-e5 (signal 4)
+tldextract              # domaine enregistré (nouvelair.com.tn → nouvelair)
+scikit-learn==1.6.1     # version d'entraînement des .joblib : ne pas changer
+joblib
+pandas<3                # pandas 3 supprime Styler.applymap
+numpy
+requests                # RDAP et crt.sh (signal 2)
+langdetect
+beautifulsoup4
+cryptography
+
+# --- Dashboard temps réel ---
+streamlit
+streamlit-autorefresh
+plotly
+
+# --- Watcher Gmail ---
+python-dotenv
+
+# --- Base de donnees ---
+SQLAlchemy>=2.0        # couche d'acces ; SQLite suffit, aucun serveur requis
+# pymysql             # a decommenter pour MySQL
+# psycopg2-binary     # a decommenter pour PostgreSQL
+
+# --- Comptes utilisateurs ---
+# cryptography sert au chiffrement du mot de passe d'application Gmail ;
+# le hachage des mots de passe utilise hashlib, inclus dans Python.

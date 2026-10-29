@@ -1,0 +1,28 @@
+{
+  "version": "MailGuard v8 : 5 signaux + fusion apprise",
+  "SEUIL_DECISION": 0.928,
+  "SEUIL_SUSPECT_FUSION": 0.825,
+  "SEUIL_FRAUDULEUX_FUSION": 0.928,
+  "SEUILS_SIGNAUX": {
+    "S1_domaine_CANINE": 0.44,
+    "S2_identite_GradientBoosting": 0.74,
+    "S2_regle_age_jours": 30,
+    "S3_chemin_GradientBoosting": 0.894,
+    "S4_contenu_e5_LR": 0.391
+  },
+  "POIDS_FUSION_APPRIS": {
+    "S5 authentification": 5.55,
+    "S4 texte (e5)": 4.81,
+    "S3 chemin (score max)": 1.64,
+    "S2 domaine jeune": 1.61,
+    "S3 domaine du lien jeune": 1.23,
+    "S1 imitation (CANINE)": 0.24,
+    "S3 lien douteux (raccourcisseur…)": 0.15,
+    "S3 règle forte (lien)": 0.12,
+    "S3 lien imite une marque": -0.62,
+    "constante": -3.99
+  },
+  "methode_seuils": "plus petit seuil donnant au plus 2 % de faux positifs (suspect) et 0,5 % (frauduleux) sur la validation, découpage GroupKFold par expéditeur",
+  "methode_calibration": "validation (notebook de la fusion)",
+  "_note": "Les seuils de la fusion sont lus dans modeles_mailguard/fusion_modele/parametres.json. SEUIL_SUSPECT_FUSION et SEUIL_FRAUDULEUX_FUSION ci-dessus ne remplacent ces valeurs que si methode_calibration vaut 'manuel' (page Calibration)."
+}
